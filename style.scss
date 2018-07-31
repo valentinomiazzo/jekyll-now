@@ -19,7 +19,8 @@ html {
 
 body {
 	background: $white;
-  font: 18px/1.4 $helvetica;
+  font: 16px/1.3 $helvetica;
+  text-align: justify;
   color: $darkGray;
 }
 
@@ -108,6 +109,10 @@ strong, b {
 
 img {
   max-width: 100%;
+}
+
+code {
+  font-size: 70%;
 }
 
 // Fixes images in popup boxes from Google Translate
