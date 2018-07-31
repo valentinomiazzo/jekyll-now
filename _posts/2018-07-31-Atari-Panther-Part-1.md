@@ -9,7 +9,7 @@ In this series of articles we’ll know more about the Atari Panther.
 
 <table style="width:75%;font-size:65%;margin:auto;text-align:center;">
   <tr>
-    <td><img src="images/atari-panther-1/image_0.png"></td>
+    <td><img src="{{ site.url }}/images/atari-panther-1/image_0.png"></td>
   </tr>
   <tr>
     <td>A <a href="https://imgur.com/a/lbdFc">3D rendering</a> of the Atari Panther</td>
