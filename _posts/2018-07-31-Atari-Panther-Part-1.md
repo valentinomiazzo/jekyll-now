@@ -138,9 +138,9 @@ In 1989 Atari has a crowded lineup of aging 8 bit consoles (the 2600jr, the 7800
 
 <table style="width:90%;font-size:65%;margin:auto;text-align:center;">
   <tr>
-    <td><img style="vertical-align:middle;" src="images/atari-panther-1/Atari-2600-Jr-FL.jpg"></td>
-    <td><img style="vertical-align:middle;" src="images/atari-panther-1/300px-Atari-7800-Console-Set.jpg"></td>
-    <td><img style="vertical-align:middle;" src="images/atari-panther-1/300px-Atari_XEGS.jpg"></td>
+    <td><img style="vertical-align:middle;" src="{{ site.url }}/images/atari-panther-1/Atari-2600-Jr-FL.jpg"></td>
+    <td><img style="vertical-align:middle;" src="{{ site.url }}/images/atari-panther-1/300px-Atari-7800-Console-Set.jpg"></td>
+    <td><img style="vertical-align:middle;" src="{{ site.url }}/images/atari-panther-1/300px-Atari_XEGS.jpg"></td>
   </tr>
   <tr>
     <td>Atari 2600jr</td>
@@ -153,7 +153,7 @@ In 1989 Atari has a crowded lineup of aging 8 bit consoles (the 2600jr, the 7800
 
 <table style="width:50%;font-size:65%;margin:auto;text-align:center;">
   <tr>
-    <td><img style="vertical-align:middle;" src="images/atari-panther-1/image_2.png"></td>
+    <td><img style="vertical-align:middle;" src="{{ site.url }}/images/atari-panther-1/image_2.png"></td>
   </tr>
   <tr>
     <td>Nintendo NES</td>
@@ -164,8 +164,8 @@ In Europe the Commodore Amiga 500 is the king and great games are continuously [
 
 <table style="width:90%;font-size:65%;margin:auto;text-align:center;">
   <tr>
-    <td><img style="vertical-align:middle;" src="images/atari-panther-1/300px-Amiga500_system.jpg"></td>
-    <td><img style="vertical-align:middle;" src="images/atari-panther-1/300px-Atari_1040STf.jpg"></td>
+    <td><img style="vertical-align:middle;" src="{{ site.url }}/images/atari-panther-1/300px-Amiga500_system.jpg"></td>
+    <td><img style="vertical-align:middle;" src="{{ site.url }}/images/atari-panther-1/300px-Atari_1040STf.jpg"></td>
   </tr>
   <tr>
     <td>Commodore Amiga 500</td>
@@ -181,8 +181,8 @@ The console hype is mounting also in Europe with Megadrive and PC Engine unoffic
 
 <table style="width:90%;font-size:65%;margin:auto;text-align:center;">
   <tr>
-    <td><img style="vertical-align:middle;" src="images/atari-panther-1/250px-PC-Engine-Console-Set.jpg"></td>
-    <td><img style="vertical-align:middle;" src="images/atari-panther-1/250px-Sega-Mega-Drive-JP-Mk1-Console-Set.jpg"></td>
+    <td><img style="vertical-align:middle;" src="{{ site.url }}/images/atari-panther-1/250px-PC-Engine-Console-Set.jpg"></td>
+    <td><img style="vertical-align:middle;" src="{{ site.url }}/images/atari-panther-1/250px-Sega-Mega-Drive-JP-Mk1-Console-Set.jpg"></td>
   </tr>
   <tr>
     <td>NEC PC Engine</td>
@@ -194,7 +194,7 @@ It is in Europe where another new console creates a lot of buzz on the specializ
 
 <table style="width:50%;font-size:65%;margin:auto;text-align:center;">
   <tr>
-    <td><img style="vertical-align:middle;" src="images/atari-panther-1/S667-02.jpg"></td>
+    <td><img style="vertical-align:middle;" src="{{ site.url }}/images/atari-panther-1/S667-02.jpg"></td>
   </tr>
   <tr>
     <td>Konix Multisystem</td>
@@ -215,7 +215,7 @@ In 09/89 Atari releases the Lynx portable console, a project acquired from the b
 
 <table style="width:50%;font-size:65%;margin:auto;text-align:center;">
   <tr>
-    <td><img style="vertical-align:middle;" src="images/atari-panther-1/300px-Atari-Lynx-I-Handheld.jpg"></td>
+    <td><img style="vertical-align:middle;" src="{{ site.url }}/images/atari-panther-1/300px-Atari-Lynx-I-Handheld.jpg"></td>
   </tr>
   <tr>
     <td>Atari Lynx</td>
@@ -230,8 +230,8 @@ In 11/90 the Nintendo Super Famicom is launched in Japan (Famicom is the Japanes
 
 <table style="width:90%;font-size:65%;margin:auto;text-align:center;">
   <tr>
-    <td><img style="vertical-align:middle;" src="images/atari-panther-1/250px-Nintendo-Super-Famicom-Set-FL.jpg"></td>
-    <td><img style="vertical-align:middle;" src="images/atari-panther-1/250px-SNES-Mod1-Console-Set.jpg"></td>
+    <td><img style="vertical-align:middle;" src="{{ site.url }}/images/atari-panther-1/250px-Nintendo-Super-Famicom-Set-FL.jpg"></td>
+    <td><img style="vertical-align:middle;" src="{{ site.url }}/images/atari-panther-1/250px-SNES-Mod1-Console-Set.jpg"></td>
   </tr>
   <tr>
     <td>Nintendo Super Famicom</td>
@@ -243,8 +243,8 @@ The system specifications are better than those of the Sega Megadrive, the launc
 
 <table style="width:90%;font-size:65%;margin:auto;text-align:center;">
   <tr>
-    <td><img style="vertical-align:middle;" src="images/atari-panther-1/Supermarioworld.jpg"></td>
-    <td><img style="vertical-align:middle;" src="images/atari-panther-1/SNES_F-Zero.png"></td>
+    <td><img style="vertical-align:middle;" src="{{ site.url }}/images/atari-panther-1/Supermarioworld.jpg"></td>
+    <td><img style="vertical-align:middle;" src="{{ site.url }}/images/atari-panther-1/SNES_F-Zero.png"></td>
   </tr>
   <tr>
     <td>Super Mario World</td>
@@ -264,7 +264,7 @@ With such time pressure, and the Atari Jaguar development proceeding faster than
 
 <table style="width:50%;font-size:65%;margin:auto;text-align:center;">
   <tr>
-    <td><img style="vertical-align:middle;" src="images/atari-panther-1/image_3.png"></td>
+    <td><img style="vertical-align:middle;" src="{{ site.url }}/images/atari-panther-1/image_3.png"></td>
   </tr>
   <tr>
     <td>The project cancellation memo 05/91 (Atari museum)</td>
@@ -275,7 +275,7 @@ In 08/91 the Nintendo SNES is released in USA. Sega cuts the price of the Megadr
 
 <table style="width:50%;font-size:65%;margin:auto;text-align:center;">
   <tr>
-    <td><img style="vertical-align:middle;" src="images/atari-panther-1/image_4.png"></td>
+    <td><img style="vertical-align:middle;" src="{{ site.url }}/images/atari-panther-1/image_4.png"></td>
   </tr>
   <tr>
     <td>Sonic the Hedgehog</td>
@@ -288,7 +288,7 @@ Unfortunately the Jaguar is still in development after more than 3 years of work
 
 <table style="width:50%;font-size:65%;margin:auto;text-align:center;">
   <tr>
-    <td><img style="vertical-align:middle;" src="images/atari-panther-1/image_5.png"></td>
+    <td><img style="vertical-align:middle;" src="{{ site.url }}/images/atari-panther-1/image_5.png"></td>
   </tr>
   <tr>
     <td>Super Street Fighter 2</td>
@@ -301,7 +301,7 @@ The development lasted more than 4 years and around 30 months passed from closin
 
 <table style="width:50%;font-size:65%;margin:auto;text-align:center;">
   <tr>
-    <td><img style="vertical-align:middle;" src="images/atari-panther-1/image_6.png"></td>
+    <td><img style="vertical-align:middle;" src="{{ site.url }}/images/atari-panther-1/image_6.png"></td>
   </tr>
   <tr>
     <td>Atari Jaguar</td>
@@ -310,8 +310,8 @@ The development lasted more than 4 years and around 30 months passed from closin
 
 <table style="width:90%;font-size:65%;margin:auto;text-align:center;">
   <tr>
-    <td><img style="vertical-align:middle;" src="images/atari-panther-1/320px-Sega-Saturn-Console-Set-Mk1.jpg"></td>
-    <td><img style="vertical-align:middle;" src="images/atari-panther-1/320px-PSX-Console-wController.jpg"></td>
+    <td><img style="vertical-align:middle;" src="{{ site.url }}/images/atari-panther-1/320px-Sega-Saturn-Console-Set-Mk1.jpg"></td>
+    <td><img style="vertical-align:middle;" src="{{ site.url }}/images/atari-panther-1/320px-PSX-Console-wController.jpg"></td>
   </tr>
   <tr>
     <td>Sega Saturn</td>
