@@ -72,7 +72,7 @@ Components architecture
 
 <table style="width:50%;font-size:65%;margin:auto;text-align:center;">
   <tr>
-    <td><img src="images/atari-panther-1/image_1.png"></td>
+    <td><img src="{{ site.url }}/images/atari-panther-1/image_1.png"></td>
   </tr>
   <tr>
     <td>Internals of the developer kit (S. Walgenbach)</td>
