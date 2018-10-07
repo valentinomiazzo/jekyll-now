@@ -16,122 +16,6 @@ In this series of articles we’ll know more about the Atari Panther.
   </tr>
 </table>
 
-# The console
-
-## Components
-
-[Documents](http://www.atarimuseum.com/videogames/consoles/jaguar/Panther/index.htm) found in the recent years allow to well understand how the Atari Panther works and how it looks. The [schematics](https://www.chzsoft.de/asic-web/console.pdf) have been recovered by Christian Zietz. These, plus photos of the [developer kit](http://www.homecomputer.de/pages/panther.html) and the [developer manuals](http://www.atarimuseum.com/videogames/consoles/jaguar/Panther/PantherHW%20DocumentsFlare%20II.zip), allow to define its components.
-
-
-```
-                                            a
-  ┌─────┬─────┬─────┬─────┬─────┬───────────┬─────────────┐
-  │     │     │     │     │     │    p      │      ld     │
-[CTG] [EXP]  [AC] [ROM] [CPU]  [GS]═════[Panther]──────[lSRAM]
-  │     │     │     │     │     │           │      ud     │
-  └─────┴─────┴─────┴─────┴─────┴───────────┴──────────[uSRAM]
-
-a       = address bus
-ld      = lower data bus
-ud      = upper data bus
-p       = pixel bus
-
-lSRAM   = lower SRAM
-uSRAM   = upper SRAM
-Panther = Panther Chip
-GS      = GameShifter Chip
-CPU     = CPU
-ROM     = Boot ROM
-AC      = Audio Chip
-EXP     = Expansion Port
-CTG     = Cartridge Port</td>
-```
-
-Components architecture
-* The CPU, a Motorola 68000 @ 16 Mhz
-* The Panther chip (PC, 160 pin) @ 16 Mhz, it is the heart of the system and perform all these functions:
-    * Support logic for the CPU
-    * Bus arbiter for the main bus
-    * Address decoding
-    * Bridges the lower and upper data bus
-    * Contains the Object Processor
-    * Feeds the GameShifter chip via a 5 bit data bus and two 9 bit address bus. One with the start x and the other with the end x.
-    * Generates clocks and video synchronization signals
-* The [GameShifter](https://www.chzsoft.de/asic-web/console.pdf) chip (GS, 84 pin) @ 16 Mhz, contains:
-    * A dual port CLUT
-    * Two line buffers (a front and a back buffer)
-    * The RGB DACs.
-    * The circuitry which shifts out pixels from the back line buffer to DACs.
-* The main RAM. 32 KB of SRAM @ 8 Mhz (120ns). It is composed of four 8KB chips on a 32 bit bus with each byte maskable
-* The audio chip. An Ensoniq ES5505 OTIS @ 8 Mhz
-* The audio RAM. 8 KB of SRAM @ 8 Mhz (120ns). It is composed of a single chip on a 8 bit bus.
-* The BIOS ROM. 64 KB of ROM @ 4Mhz (250ns). It is composed of two 32KB chips on a 16 bit bus
-* Discrete glue logic required by the audio subsystem and to read the 2 joystick ports
-* A Cartridge port with 16 bit data bus and 24 bit address bus
-* A Expansion port with 16 bit data bus and 24 bit address bus
-
-<table style="width:50%;font-size:65%;margin:auto;text-align:center;">
-  <tr>
-    <td><img src="{{ site.url }}/images/atari-panther-1/image_1.png"></td>
-  </tr>
-  <tr>
-    <td>Internals of the developer kit (S. Walgenbach)</td>
-  </tr>
-</table>
-
-The developer kit contains some additional components:
-* A 2MB 16 bit ROM emulator based on 16 SRAM chips
-* A MC6821 to read/write the ROM emulator via parallel port
-* More glue logic
-
-## Specifications
-
-These are the Panther specifications:
-* The 68000 CPU is 16 bit, at 16 Mhz, can theoretically [reach](https://en.wikipedia.org/wiki/Instructions_per_second#MIPS) 2,8 MIPS .
-    * Can read all the memory in the system
-    * SRAM (4 mclk no wait states, a mclk is a 16 Mhz cycle, 62,5 ns)
-    * Audio SRAM (4 mclk ?)
-    * Boot ROM (4 mclk ?)
-    * Cartridge ROM (6 mclk)
-    * Cartridge RAM (6 mclk)
-    * Panther registers (4 mclk)
-    * GameShifter  (4 mclk)
-        * registers
-        * CLUT
-        * line buffer (write only)
-    * OTIS registers (4 mclk ?)
-    * Joypad registers  (4 mclk ?)
-* Up to 6MB of ROM on the cartridge @ 4 Mhz
-* Up to 32KB of RAM on the cartridge @ 4 Mhz
-* The screen resolution is 320x200 (NTSC)
-* Two line buffers (a front and a back buffer) of 320 pixel with 5 bit depth.
-    * The front buffer can be copied in a single clock cycle on the back buffer.
-    * The Panther chip can only write the front line buffer @ 16 Mhz (62 ns).
-    * The CPU can only write the front line buffer through the Panther chip @ 8 Mhz (125 ns, 2 mclk).
-* The Color Look Up Table (CLUT)
-    * has 32 colors with 18 bit depth (262K shades).
-    * it is dual port so it is possible to modify the CLUT at any time without visible glitches.
-* The graphic composition is done by the Panther Chip (PC) scan line per scan line in a double buffered line buffer executing an Object List (OL).
-    * There is no limit to the Objects into the OL except the SRAM size and the time available to process it (a scan line, 64 usec).
-    * There are multiple type of Objects, each with its function
-        * *Bitmap* object
-            * any size
-            * 1,2,4,8 bit per pixel
-            * zoomable and shrinkable
-            * optionally Run Length Encoded
-        * *Copy* an array from anywhere to the CLUT at a given scanline
-        * *Branch* to another Object based on the scan line currently processed
-        * *Copy* an array from anywhere to anywhere
-        * *Write* a constant to a given address
-        * *Add* a constant to a given address
-        * *Interrupt* the 68000 at a given scan line
-    * All the Objects, except the Bitmap Objects, can be stored also in ROM
-    * Bitmap data can be stored in ROM or SRAM
-* The [audio chip](https://github.com/vgmrips/vgmplay/blob/master/VGMPlay/chips/es5506.c) has
-    * 32 PCM channels
-    * Digital filters
-    * Stereo panning and volume
-
 # History
 
 In 1989 Atari has a crowded lineup of aging 8 bit consoles (the 2600jr, the 7800, the XEGS) that are not able to contrast the very successful Nintendo NES in USA.
@@ -190,7 +74,7 @@ The console hype is mounting also in Europe with Megadrive and PC Engine unoffic
   </tr>
 </table>
 
-It is in Europe where another new console creates a lot of buzz on the specialized press. This is the [Konix Multisystem](https://en.m.wikipedia.org/wiki/Konix_Multisystem). It promises Amiga level graphics, better 3D and half the price thanks to custom chips containing a Blitter and a DSP. Nevertheless the Konix Multisystem never reaches the shelves because Konix goes out of cash in 03/89 before the release.
+It is in Europe where another new console creates a lot of buzz on the specialized press. This is the [Konix Multisystem](https://en.m.wikipedia.org/wiki/Konix_Multisystem). It promises Amiga level graphics, better 3D and half the price thanks to custom chips containing a Blitter and a DSP. Nevertheless the Konix Multisystem never reaches the shelves because Konix goes out of cash in 03/89, few months before the announced release date.
 
 <table style="width:50%;font-size:65%;margin:auto;text-align:center;">
   <tr>
@@ -203,15 +87,15 @@ It is in Europe where another new console creates a lot of buzz on the specializ
 
 In this scenario Atari decides that it must have a new console. A console based on the Atari STE is briefly considered but a better option is available.
 
-The Konix Multisystem chips were designed in UK by a small unknown consulting company, Flare Technology. The founders are veterans that worked at Sinclair and at Amstrad.
+The Konix Multisystem chips were designed in UK by a small unknown consulting company, Flare Technology. The founders are veterans that worked in the 8 bit home computer space at Sinclair and at Amstrad.
 
 Two of the members of Flare Technology, Martin Brennan and John Mathieson, are [contracted by Atari](http://www.konixmultisystem.co.uk/index.php?id=interviews&content=martin ) to work on two new consoles. Flare 2 is formed and the design of the Atari Panther and the Atari Jaguar begins in the Q1/89.
 
-The two consoles are developed in parallel. The Jaguar is the real heir of the Konix chipset being a design based on framebuffer with blitter and RISC processors. The Panther is more about to productionize a concept already defined by Atari, a sort of 16/32 bit evolution of the Atari 7800.
+The two consoles are developed in parallel. The Jaguar is the heir of the Konix chipset being a 16/64 bit design based on framebuffer, blitter and RISC processors. The Panther is more about to productionize a concept already defined by Atari, a sort of 16/32 bit evolution of the Atari 7800.
 
-In 08/89 the Sega Megadrive is released in USA as Sega Genesis and the NEC PC Engine as the NEC TurboGrafx-16.
+Later in '89, while Atari is working on the two consoles, the Japaneses are ready to conquer the USA. In 08/89 the Sega Megadrive is released in USA as Sega Genesis and the NEC PC Engine as the NEC TurboGrafx-16.
 
-In 09/89 Atari releases the Lynx portable console, a project acquired from the bankrupt Epyx and designed by two ex-Amiga engineers, Dave Needle and R.J. Mical.
+Atari has something to release too. In 09/89 Atari releases the Lynx portable console, a project acquired from the bankrupt Epyx and designed by two ex-Amiga engineers, Dave Needle and R.J. Mical. The target here is the Nintendo Gameboy. This is interesting in multiple ways. First, shows how Atari was not concerned with competing on multiple fronts. Second, the Lynx hardware was not used as base for a more powerful home game console version.
 
 <table style="width:50%;font-size:65%;margin:auto;text-align:center;">
   <tr>
@@ -247,8 +131,8 @@ The system specifications are better than those of the Sega Megadrive, the launc
     <td><img style="vertical-align:middle;" src="{{ site.url }}/images/atari-panther-1/SNES_F-Zero.png"></td>
   </tr>
   <tr>
-    <td>Super Mario World</td>
-    <td>F-zero</td>
+    <td>Super Mario World (SNES)</td>
+    <td>F-zero (SNES)</td>
   </tr>
 </table>
 
@@ -278,20 +162,20 @@ In 08/91 the Nintendo SNES is released in USA. Sega cuts the price of the Megadr
     <td><img style="vertical-align:middle;" src="{{ site.url }}/images/atari-panther-1/image_4.png"></td>
   </tr>
   <tr>
-    <td>Sonic the Hedgehog</td>
+    <td>Sonic the Hedgehog (Megadrive)</td>
   </tr>
 </table>
 
-It is only in late ‘92, with the release of the SNES in EU and the release of Super Street Fighter 2 for SNES, that the market is completely mature and everyone wants one of these 16 bit consoles.
+It is only in late ‘92, with the release of the SNES in EU and the release of Super Street Fighter 2 for SNES, that the 16 bit market is completely mature and everyone wants one of these consoles.
 
-Unfortunately the Jaguar is still in development after more than 3 years of work and more than 1  year since the Panther project was stopped.
+Unfortunately the Jaguar is still in development after more than 3 years of work and more than 1 year since the Panther project was stopped.
 
 <table style="width:50%;font-size:65%;margin:auto;text-align:center;">
   <tr>
     <td><img style="vertical-align:middle;" src="{{ site.url }}/images/atari-panther-1/image_5.png"></td>
   </tr>
   <tr>
-    <td>Super Street Fighter 2</td>
+    <td>Super Street Fighter 2 (SNES)</td>
   </tr>
 </table>
 
@@ -374,3 +258,7 @@ Being the first on the market doesn’t help the Jaguar. Sony’s huge investmen
 * 12/94 Sony Playstation is released in US for $300
 
 * 09/95 Atari Jaguar CD is released
+
+# Closing
+
+We know now the story of the Atari Panther. In the next article we will look at what is inside the console.
