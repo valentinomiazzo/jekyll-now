@@ -213,7 +213,7 @@ The GameShifter chip (GS) has 84 pins and works @ 16 Mhz. The  [schematics](http
 
 # The Audio Subsystem
 
-The recovered schematics documents it as "PANTHER DEVELOPMENT SYSTEM OTIS SOUND SYSTEM" and it is implemented as a daughter card with lot of glue logic in the SDKs found.
+The recovered schematics identify the audio subsystem as  "PANTHER DEVELOPMENT SYSTEM OTIS SOUND SYSTEM" and it is implemented as a daughter card with lot of glue logic.
 
 <table style="width:50%;font-size:65%;margin:auto;text-align:center;">
   <tr>
