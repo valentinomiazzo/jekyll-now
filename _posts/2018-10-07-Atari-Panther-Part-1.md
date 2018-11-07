@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The Atari Panther - Part 1
+title: The Atari Panther - Part 1 - The history
 ---
 
 The Atari Panther is a never released game console from the ‘90s. Its story is fascinating because of its connections. Its hardware is interesting for its strengths and shortcomings. Its fate is inspiring for what it could have been.
