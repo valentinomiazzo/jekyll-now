@@ -233,7 +233,7 @@ The audio chip is not a custom ASIC. Instead, an off-the-shelf chip is used. It 
 
 The PCM samples are stored in a dedicated 8 bit SRAM. It is implemented with a single 8x8K SRAM chip @ 8 Mhz (120ns).
 
-This minimal amount of audio SRAM implies that samples have to streamed from the ROM. The Object Processor and its Copy Object can be used to implement this efficiently.
+This minimal amount of audio SRAM implies that samples have to be streamed from the Cartridge ROM. The Object Processor and its Copy Object can be used to implement this efficiently.
 
 ## The Developer Kit
 
