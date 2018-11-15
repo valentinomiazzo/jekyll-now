@@ -18,7 +18,7 @@ In this series of articles we’ll know more about the Atari Panther.
 
 Articles:
 * Part 1 - The history
-* [Part 2 - The hardware](Atari-Panther-Part-2/)
+* [Part 2 - The hardware](../Atari-Panther-Part-2/)
 
 # History
 
