@@ -16,6 +16,10 @@ In this series of articles we’ll know more about the Atari Panther.
   </tr>
 </table>
 
+Articles:
+* Part 1 - The history
+* [Part 2 - The hardware](Atari-Panther-Part-2/)
+
 # History
 
 In 1989 Atari has a crowded lineup of aging 8 bit consoles (the 2600jr, the 7800, the XEGS) that are not able to contrast the very successful Nintendo NES in USA.

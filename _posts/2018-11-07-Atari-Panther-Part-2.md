@@ -15,7 +15,7 @@ In this second part we explore the Atari Panther from an hardware point of view.
 </table>
 
 Articles:
-* [Part 1 - The history](2018-10-07-Atari-Panther-Part-1.md)
+* [Part 1 - The history](Atari-Panther-Part-1/)
 * Part 2 - The hardware
 
 # The sources
