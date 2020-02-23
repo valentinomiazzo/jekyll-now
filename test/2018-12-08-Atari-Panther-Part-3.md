@@ -112,15 +112,6 @@ The computer/console has to be designed to work with a Genlock.
 * First, the computer has to signal on a pin when a pixel is transparent. In this way, the Genlock knows when to show the other picture.
 * Second, the two devices needs to have a common pixel clock. For this reason, the computer has an input pin where it can accept an external pixel clock.
 
-<table style="width:50%;font-size:65%;margin:auto;text-align:center;">
-  <tr>
-    <td><img style="vertical-align:middle;" src="{{ site.url }}/images/atari-panther-3/gates1.png"></td>
-  </tr>
-  <tr>
-    <td>Amiga video connector. Note pins: XXX, YYY</td>
-  </tr>
-</table>
-
 The problem with the Panther is that the schematics of the dev kit show that while the needed pins are present at the video connector, they are not connected (see page 5 of the console schematics).
 
 <table style="width:50%;font-size:65%;margin:auto;text-align:center;">
@@ -128,7 +119,7 @@ The problem with the Panther is that the schematics of the dev kit show that whi
     <td><img style="vertical-align:middle;" src="{{ site.url }}/images/atari-panther-3/video-connector.png"></td>
   </tr>
   <tr>
-    <td>Video connector (from the [console schematics](https://www.chzsoft.de/asic-web/console.pdf))</td>
+    <td>Video connector (from the <a href="https://www.chzsoft.de/asic-web/console.pdf">console schematics</a>)</td>
   </tr>
 </table>
 
