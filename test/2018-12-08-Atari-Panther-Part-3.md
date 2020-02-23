@@ -87,9 +87,9 @@ The top of the yellow car becomes red because uses the upper palette.
   </tr>
 </table>
 
-This basic example shows why it is difficult to apply this technique when you don't have full control on how the graphics move across the screen. It is possible to imagine a more elaborated setup where only part of the CLUT is dynamically modified and moving graphics uses the static part of the CLUT.
+This basic example shows that, if you don't have full control on how the graphics move across the screen then it is extremely difficult to apply this technique.
 
-In any case, the advertised 7860 colors on screen are not obtainable during the game play.
+It is possible to imagine a more elaborated setups and for sure the dynamic CLUT technique can improve colorfulness but, in any case, the advertised 7860 colors on screen are not obtainable during actual game action.
 
 ## 'Genlock option'
 
