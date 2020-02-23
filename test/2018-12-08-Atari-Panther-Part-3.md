@@ -141,16 +141,16 @@ Signal SC is the 16 Mhz clock and, as consequence, there is no way to control it
 It is true that the Panther has a 32 Mhz crystal on the motherboard and a 32 bit data bus. Anyway, 1) some parts use only 16 bit 2) none of the parts run at 32Mhz, some run at 16 Mhz, some at 8 Mhz or even 4 Mhz. Anyway this is just marketing, bits and Mhz are not indicative of the performance without looking at the whole architecture.
 
 ## 'About 2000 sprites can be displayed simultaneously'
-This comes from the footprint of a Bitmap Object which is 16 bytes long. By filling all the SRAM available with Bitmap Object definitions, it is possible to store 32 * 1024 / 16 = 2048 Bitmap Object definitions.
+This figure comes from the footprint of a Bitmap Object which is 16 bytes long. By filling all the SRAM available with Bitmap Object definitions, it is possible to store 32 * 1024 / 16 = 2048 Bitmap Object definitions.
 But, can they be displayed? On a NTSC system there are 200 lines. This means about 2048 / 200 = 10 sprites per line. Ten or eleven sprites per line is absolutely within the capabilities of the console.
-So, yes, technically it is a true statement but it tells nothing about the real capabilities. Sprites 1 pixel tall are quite useless.
+So, yes, technically it is a true statement but it tells nothing about the real capabilities. Indeed, sprites 1 pixel tall are quite useless.
 
-Let's try to organize them in another way. We can use 16 x 16 pixels sprites and put them in a grid. When the screen is full we start again creating a new layer. Horizontally we can fit 320/16 = 20 sprites. Vertically we can fit 240/16 = 15 sprites.
+Let's try to organize the sprites in another way. We can use 16 x 16 pixels sprites and put them in a grid. When the screen is full we start again creating a new layer. Horizontally we can fit 320/16 = 20 sprites. Vertically we can fit 240/16 = 15 sprites.
 This means 20*15 = 300 sprites per layer. This gives us 2000/300 = 6.67 layers on screen.
 
-Every Bitmap Object needs 12 mclks to be processed (6 SRAM accesses) and, for a 16 colors sprite, 4 mclks (1 ROM access) every 4 pixels fetched. In total, this is 12+4*4 = 28 mclks for each sprite. On a scanline (64 us) there are about 1024 mclks. Therefore, 1024/28 = 37 sprites per scanline, or 37/20 = 1.8 layers per scanline. Only 1.8 layers can be displayed instead of the wanted 6.67 layers.
+Every Bitmap Object needs 12 mclks to be processed (6 SRAM accesses) and, for a 16 colors sprite, 4 mclks (1 ROM access) every 4 pixels fetched. In total, this is 12+4*4 = 28 mclks for each sprite on a given scanline. On a scanline (64 us) there are about 1024 mclks. Therefore, 1024/28 = 37 sprites per scanline, or 37/20 = 1.8 layers per scanline.
 
-Even ignoring the overhead of culling not visible sprites (this is for another article), it is already evident that the hardware cannot display 2000 'meaningful' sprites and such figure is just smoke and mirrors.
+This is a bad news, only 1.8 layers can be displayed instead of the wanted 6.67 layers. It is evident that the hardware far away from being capable of displaying 2000 'meaningful' sprites.
 
 ## 'Pixel programmable interrupt'
 The Object Processor has an 'instruction' that can generate an interrupt for the CPU at a given scanline. Anyway, it is not possible to specify the x position. A more correct statement would have been "Scanline programmable interrupt".
