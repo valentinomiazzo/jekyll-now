@@ -1,9 +1,9 @@
 ---
 layout: post
-title: The Atari Panther - Part 3 - Advertised specifications
+title: The Atari Panther - Part 3 - Features
 ---
 
-Welcome back to this series of articles. In this third part we'll analyze how the Atari Panther renders graphics and we will review critically the advertised specs.
+Welcome back to this series of articles. In this third part we will review critically the declared features.
 
 <table style="width:75%;font-size:65%;margin:auto;text-align:center;">
   <tr>
@@ -17,11 +17,11 @@ Welcome back to this series of articles. In this third part we'll analyze how th
 Articles:
 * [Part 1 - The history](../Atari-Panther-Part-1/)
 * [Part 2 - The hardware](../Atari-Panther-Part-2/)
-* [Part 3 - Advertised specifications](../Atari-Panther-Part-3/)
+* [Part 3 - Specifications](../Atari-Panther-Part-3/)
 
-# Declared performance
+# Declared features
 
-While the Panther was in development, Atari started a press campaign and communicated these specifications.
+While the Panther was in development, Atari started a press campaign and communicated these features.
 
 <table style="width:50%;font-size:65%;margin:auto;text-align:center;">
   <tr>
@@ -35,11 +35,23 @@ While the Panther was in development, Atari started a press campaign and communi
 As usual in these cases, while true, these figures don’t quite represent the truth. Let’s see why.
 
 ## '7860 colors/screen'
-This figure comes from the idea of changing all the 32 entries of the CLUT at every visible scanline. Indeed, in NTSC (including the over-scan area) there are 240 visible lines and a simple multiplication gives the expected result: 240 * 32 = 7860.
-While true and doable for static images, this technique becomes unrealistic for animated images typical on video games.
+This figure comes from the idea of changing all the 32 entries of the CLUT at every visible scanline. Indeed, in NTSC (including the over-scan area) there are 240 visible lines and a simple multiplication gives the expected result: 240 * 32 = 7860 colors.
+
+To have an idea of how effective this technique can be, take a look to the following image. It has up to 16 colors per scanline but the colors are modified across the screen.
+
+<table style="width:50%;font-size:65%;margin:auto;text-align:center;">
+  <tr>
+    <td><img style="vertical-align:middle;" src="{{ site.url }}/images/atari-panther-3/scavengers_oni_step_final.png"></td>
+  </tr>
+  <tr>
+    <td>Screen split in two and two optimized CLUTs</td>
+  </tr>
+</table>
+
+While doable and effective for static images, this technique becomes unrealistic for animated images typical on video games.
 
 This can be explained with a simplified example. Let's imagine a screen where a red car is positioned on the top half and a yellow one on the bottom half.
-The 32 colors palette contains both the reds and the greens plus all the other needed colors. For example, the palette could contain 8 shades of red, 8 shades of yellow and 16 other colors.
+The 32 colors palette contains both the reds and the yellows plus all the other needed colors. For example, the palette could contain 8 shades of red, 8 shades of yellow and 16 other colors.
 
 <table style="width:50%;font-size:65%;margin:auto;text-align:center;">
   <tr>
@@ -63,7 +75,7 @@ This allows for 16 shades of red on the top and 16 shades of yellow on the botto
   </tr>
 </table>
 
-This is great, but what happens when the green car goes up and crosses the middle of the screen?
+This is great, but what happens when the yellow car goes up and crosses the middle of the screen?
 The top of the yellow car becomes red because uses the upper palette.
 
 <table style="width:50%;font-size:65%;margin:auto;text-align:center;">
