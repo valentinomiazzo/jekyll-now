@@ -101,7 +101,7 @@ The Commodore Amiga and some MSX2 computers are some of the few home computers d
 
 <table style="width:50%;font-size:65%;margin:auto;text-align:center;">
   <tr>
-    <td>{% include youtube.html id=lSYcceu_H_w style="vertical-align:middle;" width="100%" height="100%" %}</td>
+    <td>{% include youtube.html id="lSYcceu_H_w" style="vertical-align:middle;" width="100%" height="100%" %}</td>
   </tr>
   <tr>
     <td>Sega Astron belt</td>
