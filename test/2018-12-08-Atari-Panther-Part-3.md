@@ -99,7 +99,7 @@ A Genlock is a device that, when connected to a computer, allows to superimpose 
 
 The Commodore Amiga and some MSX2 computers are some of the few home computers designed to work with a Genlock. Genlocks were also used in the arcades during the laserdisc era.
 
-<table style="width:50%;font-size:65%;margin:auto;text-align:center;">
+<table style="width:70%;font-size:65%;margin:auto;text-align:center;">
   <tr>
     <td>{% include youtube.html id="lSYcceu_H_w" style="vertical-align:middle;" width="100%" height="100%" %}</td>
   </tr>
@@ -126,7 +126,7 @@ The problem with the Panther is that the schematics of the dev kit show that whi
 Also the schematics of the GameShifter chip seems to prove this.
 The RGB DACs pixel clock is controlled by signal C2 (page 10 of the GS schematics). As visible at page 27, signal C2 in not connected to any pin. Indeed, signal C2 is generated inside the chip from the input pin SC and is synchronous to signal C1.
 
-<table style="width:50%;font-size:65%;margin:auto;text-align:center;">
+<table style="width:70%;font-size:65%;margin:auto;text-align:center;">
   <tr>
     <td><img style="vertical-align:middle;" src="{{ site.url }}/images/atari-panther-3/gates1.png"></td>
   </tr>
