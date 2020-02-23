@@ -44,7 +44,7 @@ To have an idea of how effective this technique can be, take a look to the follo
     <td><img style="vertical-align:middle;" src="{{ site.url }}/images/atari-panther-3/scavengers_oni_step_final.png"></td>
   </tr>
   <tr>
-    <td>Screen split in two and two optimized CLUTs</td>
+    <td>Amiga dynamic hires image. Source <a href="http://eab.abime.net/showthread.php?t=86837">EAB</a> </td>
   </tr>
 </table>
 
