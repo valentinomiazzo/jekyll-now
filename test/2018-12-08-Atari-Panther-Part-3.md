@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The Atari Panther - Part 3 - Features
+title: The Atari Panther - Part 3 - Features?
 ---
 
 Welcome back to this series of articles. In this third part we will review critically the declared features.
@@ -17,7 +17,7 @@ Welcome back to this series of articles. In this third part we will review criti
 Articles:
 * [Part 1 - The history](../Atari-Panther-Part-1/)
 * [Part 2 - The hardware](../Atari-Panther-Part-2/)
-* [Part 3 - Specifications](../Atari-Panther-Part-3/)
+* [Part 3 - Features?](../Atari-Panther-Part-3/)
 
 # Declared features
 
@@ -48,7 +48,7 @@ To have an idea of how effective this technique can be, take a look to the follo
   </tr>
 </table>
 
-While doable and effective for static images, this technique becomes unrealistic for animated images typical on video games.
+While doable and effective for static images, this technique becomes unrealistic for animated images that are typical on video games.
 
 This can be explained with a simplified example. Let's imagine a screen where a red car is positioned on the top half and a yellow one on the bottom half.
 The 32 colors palette contains both the reds and the yellows plus all the other needed colors. For example, the palette could contain 8 shades of red, 8 shades of yellow and 16 other colors.
@@ -156,12 +156,7 @@ This is a bad news, only 1.8 layers can be displayed instead of the wanted 6.67 
 The Object Processor has an 'instruction' that can generate an interrupt for the CPU at a given scanline. Anyway, it is not possible to specify the x position. A more correct statement would have been "Scanline programmable interrupt".
 
 ## 'Fast hardware addition for object manipulation'
-The Object Processor has an 'instruction' that allows to add a constant to value present on a given memory address. While useful to create self-modifying Object lists, this hardly communicates a performance gain compared to the competition.
-
-# Actual performance
-
-These specifications raise more questions than they answer. Then, what can we expect from the Panther?
+The Object Processor has an 'instruction' that allows to add a constant to the value present on a given memory address. While useful to create self-modifying Object lists, this hardly communicates a performance gain compared to the competition.
 
 # Closing
-
-...
+Thank you for reading up to this point ! In the next article we'll continue to analyze what the Atari Panther was is to do. 
