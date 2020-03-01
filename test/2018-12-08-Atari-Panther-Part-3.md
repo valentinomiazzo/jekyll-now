@@ -42,10 +42,12 @@ To have an idea of how effective this technique can be, take a look to the follo
 <table style="width:50%;font-size:65%;margin:auto;text-align:center;">
   <tr>
     <td><img style="vertical-align:middle;" src="{{ site.url }}/images/atari-panther-3/scavengers_oni_step_final.png"></td>
+    <td> </td>
     <td><img style="vertical-align:middle;" src="{{ site.url }}/images/atari-panther-3/scavengers_oni_step_final_16.png"></td>    
   </tr>
   <tr>
     <td>Amiga dynamic hires image. Source <a href="http://eab.abime.net/showthread.php?t=86837">EAB</a> </td>
+    <td> </td>
     <td>same image without dynamic CLUT</td>
   </tr>
 </table>
