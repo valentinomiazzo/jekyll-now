@@ -144,16 +144,16 @@ It is true that the Panther has a 32 MHz crystal on the motherboard and a 32 bit
 This figure may derive from the size of a Bitmap Object (BO) descriptor, which is 16 bytes long. As you may remember, a Bitmap Object is a sprite in the Panther jargon.
 
 ```
-31           24 23           16 15            8 7             0
-----------------------------------------------------------------
-|type 0x01-0x7F| Y position    | Y size                |?|depth|
-----------------------------------------------------------------
-| Y scale         | unused     | link                          |
-----------------------------------------------------------------
-| data width      | drawn width        | X position            |
-----------------------------------------------------------------
-| palette      | data address                                |R|
-----------------------------------------------------------------
+            31           24 23           16 15            8 7             0
+            ----------------------------------------------------------------
+long word 0 |type 0x01-0x7F| Y position    | Y size                |?|depth|
+            ----------------------------------------------------------------
+long word 1 | Y scale         | unused     | link                          |
+            ----------------------------------------------------------------
+long word 2 | data width      | drawn width        | X position            |
+            ----------------------------------------------------------------
+long word 3 | palette      | data address                                |R|
+            ----------------------------------------------------------------
 ```
 
 By filling all the available SRAM with BO descriptors, it is possible to store 32 * 1024 / 16 = 2048 BO descriptors.
@@ -165,7 +165,19 @@ So, technically, 'About 2000 sprites can be displayed simultaneously' is a true 
 
 Let's try something more meaningful. We can use BOs large 16 x 16 pixels and put them in a grid. When the screen is full we start again creating a new layer. Horizontally we can fit 320/16 = 20 BOs. Vertically we can fit 200/16 ~= 13 BOs. This means 20*13 = 260 BOs per layer. Assuming to position 2000 BOs, we would create 2000/260 = 7.7 layers on screen. Is this possible?
 
-Every Bitmap Object needs 12 mclks to be processed (6 SRAM accesses) and, for a 16 colors sprite, 4 mclks (1 ROM access) every 4 pixels fetched. In total, this is 12+4*4 = 28 mclks for each sprite on a given scanline. On a scanline (64 us) there are about 64us * 16Mhz = 1024 mclks. Therefore the Panther can display about 1024/28 ~= 37 BOs per scanline (16 pixels wide in 16 colors). If we put them in a grid, as described above, we can create 37/20 ~= 1.8 layers or, in other words 37 * 13 = 481 BOs.
+Every Bitmap Object needs 12 mclks to be processed (6 SRAM accesses) and, for a 16 colors sprite, 4 mclks (1 ROM access) every 4 pixels fetched. In total, this is 12+4*4 = 28 mclks for each sprite on a given scanline.
+
+```
+mclks 0                 1    1    2    2    2
+      0                 2    6    0    4    8
+type  |SS|SS|SS|SS|SS|SS|RRRR|RRRR|RRRR|RRRR|
+r/w   |rr|rr|rr|rr|ww|ww|rrrr|rrrr|rrrr|rrrr|
+
+S = SRAM access
+R = ROM access
+```
+
+On a scanline (64 us) there are about 64us * 16Mhz = 1024 mclks. Therefore the Panther can display about 1024/28 ~= 37 BOs per scanline (16 pixels wide in 16 colors). If we put them in a grid, as described above, we can create 37/20 ~= 1.8 layers or, in other words 37 * 13 = 481 BOs.
 
 From this calculations It is evident that the hardware is far away from being capable of displaying 2000 'meaningful' sprites.
 
@@ -176,4 +188,4 @@ The Object Processor has an 'instruction' that can generate an interrupt for the
 The Object Processor has an 'instruction' that allows to add a constant to the value present on a given memory address. While useful to create self-modifying Object lists, this hardly communicates a performance gain compared to the competition.
 
 # Closing
-Thank you for reading up to this point ! In the next article we'll continue to analyze what the Atari Panther was is to do.
+Thank you for reading up to this point ! In the next article we'll continue to analyze what the Atari Panther can do.
