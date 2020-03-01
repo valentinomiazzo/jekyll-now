@@ -42,9 +42,11 @@ To have an idea of how effective this technique can be, take a look to the follo
 <table style="width:50%;font-size:65%;margin:auto;text-align:center;">
   <tr>
     <td><img style="vertical-align:middle;" src="{{ site.url }}/images/atari-panther-3/scavengers_oni_step_final.png"></td>
+    <td><img style="vertical-align:middle;" src="{{ site.url }}/images/atari-panther-3/scavengers_oni_step_final_16.png"></td>    
   </tr>
   <tr>
     <td>Amiga dynamic hires image. Source <a href="http://eab.abime.net/showthread.php?t=86837">EAB</a> </td>
+    <td>same image without dynamic CLUT</td>
   </tr>
 </table>
 
@@ -138,7 +140,13 @@ The RGB DACs pixel clock is controlled by signal C2 (page 10 of the GS schematic
 Signal SC is the 16 MHz clock and, as consequence, there is no way to control it from a Genlock.
 
 ## '32 MHz, 32 bit object oriented, graphics processor'
-It is true that the Panther has a 32 MHz crystal on the motherboard and a 32 bit data bus. Anyway, 1) some parts use only 16 bit 2) none of the parts run at 32MHz, some run at 16 MHz, some at 8 MHz or even 4 MHz. Anyway this is just marketing, bits and MHz are not indicative of the actual performance without looking at the whole architecture.
+It is true that the Panther has a 32 MHz crystal on the motherboard and a 32 bit data bus. Anyway:
+
+1. some parts use only 16 bit
+
+2. none of the parts run at 32MHz, some run at 16 MHz, some at 8 MHz or even 4 MHz
+
+As usual, this is just marketing, bits and MHz are not indicative of the actual performance without looking at the whole architecture.
 
 ## 'About 2000 sprites can be displayed simultaneously'
 This figure may derive from the size of a Bitmap Object (BO) descriptor, which is 16 bytes long. As you may remember, a Bitmap Object is a sprite in the Panther jargon.
