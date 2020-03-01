@@ -28,7 +28,7 @@ While the Panther was in development, Atari started a press campaign and communi
     <td><img style="vertical-align:middle;" src="{{ site.url }}/images/atari-panther-3/image_7.png"></td>
   </tr>
   <tr>
-    <td>Specifications declared to the press (from [Internet Archive](https://web.archive.org/web/20031207084119/http://www.atari-explorer.com:80/Panther-Spec.htm))</td>
+    <td>Features declared to the press (from <a href="https://web.archive.org/web/20031207084119/http://www.atari-explorer.com:80/Panther-Spec.htm">Internet Archive</a>)</td>
   </tr>
 </table>
 
