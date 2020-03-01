@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The Atari Panther - Part 3 - Features?
+title: The Atari Panther - Part 3 - Declared Features
 ---
 
 Welcome back to this series of articles. In this third part we will review critically the declared features.
@@ -17,7 +17,7 @@ Welcome back to this series of articles. In this third part we will review criti
 Articles:
 * [Part 1 - The history](../Atari-Panther-Part-1/)
 * [Part 2 - The hardware](../Atari-Panther-Part-2/)
-* [Part 3 - Features?](../Atari-Panther-Part-3/)
+* [Part 3 - Declared features](../Atari-Panther-Part-3/)
 
 # Declared features
 
@@ -48,7 +48,7 @@ To have an idea of how effective this technique can be, take a look to the follo
   <tr>
     <td>Amiga dynamic hires image. Source <a href="http://eab.abime.net/showthread.php?t=86837">EAB</a> </td>
     <td>-</td>
-    <td>same image without dynamic CLUT</td>
+    <td>Same image without dynamic CLUT</td>
   </tr>
 </table>
 
@@ -75,7 +75,7 @@ This allows for 16 shades of red on the top and 16 shades of yellow on the botto
     <td><img style="vertical-align:middle;" src="{{ site.url }}/images/atari-panther-3/cars2.png"></td>
   </tr>
   <tr>
-    <td>Screen split in two and two optimized CLUTs</td>
+    <td>Screen split in two and two optimized CLUTs.<br>Notice the improved quality</td>
   </tr>
 </table>
 
