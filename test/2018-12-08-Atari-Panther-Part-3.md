@@ -39,7 +39,7 @@ This figure comes from the idea of changing all the 32 entries of the CLUT at ev
 
 To have an idea of how effective this technique can be, take a look to the following image. It only 16 colors per scanline but the colors are modified across the screen.
 
-<table style="width:50%;font-size:65%;margin:auto;text-align:center;">
+<table style="width:70%;font-size:65%;margin:auto;text-align:center;">
   <tr>
     <td><img style="vertical-align:middle;" src="{{ site.url }}/images/atari-panther-3/scavengers_oni_step_final.png"></td>
     <td> </td>
@@ -47,7 +47,7 @@ To have an idea of how effective this technique can be, take a look to the follo
   </tr>
   <tr>
     <td>Amiga dynamic hires image. Source <a href="http://eab.abime.net/showthread.php?t=86837">EAB</a> </td>
-    <td> </td>
+    <td>-</td>
     <td>same image without dynamic CLUT</td>
   </tr>
 </table>
